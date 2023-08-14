@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>QR</title>
+</head>
+<body>
+<div class="container">
+	<div id="title_qr">
+		
+	</div>
+	<div id="qrcodeimg">
+		
+	</div>
+</div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  
+	socket.on('image', (image_qr, title_qr) => {
+		const img_qr = document.createElement('img');
+		const name_qr = document.createElement('h1');
+
+		const title = document.getElementById('title_qr');
+		const qrdiv = document.getElementById('qrcodeimg');
+
+		
+
+		img_qr.setAttribute('src', image_qr);
+		name_qr.innerText = title_qr;
+		
+		title.appendChild(name_qr)
+		qrdiv.appendChild(img_qr)
+		
+		
+	});
+  
+</script>
+
+</html>
