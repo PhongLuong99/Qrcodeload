@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+.container{
+	background: url('https://www.joneslanglasalle.com.vn/images/apac/research/jll-singapore-property-market-watch-2023-teaser-800x600.jpg.rendition/desktop.jpg');
+	width: 100%;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	padding: 0 5%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.container h1{
+	font-size: 30px;
+	color: white;
+	font-weight: 600;
+	transition: 0.5s;
+}
+
+.container img {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	width: 30%;
+}
+
+
+
