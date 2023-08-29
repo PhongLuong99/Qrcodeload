@@ -9,35 +9,24 @@
 </head>
 <body>
 <div class="container">
-	<div id="title_qr">
-		
-	</div>
-	<div id="qrcodeimg">
-		
-	</div>
+	<h1 id="title_QR"></h1>
+	<img >
 </div>
 </body>
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
   const socket = io();
-  
-	socket.on('image', (image_qr, title_qr) => {
-		const img_qr = document.createElement('img');
-		const name_qr = document.createElement('h1');
-
-		const title = document.getElementById('title_qr');
-		const qrdiv = document.getElementById('qrcodeimg');
+  		const img_qr = document.querySelector('img');
+		const name_qr = document.querySelector('#title_QR');
+		
 
 		
+	socket.on('image', (image_qr, title_qr) => {
 
 		img_qr.setAttribute('src', image_qr);
-		name_qr.innerText = title_qr;
-		
-		title.appendChild(name_qr)
-		qrdiv.appendChild(img_qr)
-		
-		
+		name_qr.textContent = `${title_qr}`;
+	
 	});
   
 </script>
