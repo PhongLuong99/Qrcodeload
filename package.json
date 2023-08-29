@@ -6,10 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon index.js",
-	"deploy": "firebase deploy --only functions",
-	"build": "spack && npm run static && npm run prerender",
-	"static": "cp static/* dist",
-	"prerender": "ts-node tools/prerender.ts"
+	"build": "npm ci && npm run build",
+	"dev": "node index.js"
   },
   "dependencies": {
     "ejs": "^3.1.9",
