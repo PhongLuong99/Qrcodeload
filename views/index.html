@@ -10,7 +10,10 @@
 <body>
 <div class="container">
 	<h1 id="title_QR"></h1>
-	<img >
+	<div>
+		<img  >
+	</div>
+	
 </div>
 </body>
 
@@ -25,7 +28,7 @@
 	socket.on('image', (image_qr, title_qr) => {
 
 		img_qr.setAttribute('src', image_qr);
-		name_qr.textContent = `${title_qr}`;
+		//name_qr.textContent = `${title_qr}`;
 	
 	});
   
