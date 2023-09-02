@@ -7,7 +7,7 @@
 
 
 .container{
-	background: url("https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W.png?alt=media&token=e5e13bcf-cd93-4666-a474-d9318e3502a6");
+	background: url("https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W2.jpg?alt=media&token=bd2cf4b6-4025-486a-ae33-91f35319686f");
 	width: 100%;
 	background-size: cover;
 	height: 100vh;
@@ -30,10 +30,22 @@ h1 {
 
 .container img {
 	display: block;
-  	margin-left: auto;
-	padding-top: 550px;
+  	margin-left: 90rem;
+	padding-top: 55px;
 	width: 19%;
 }
 
 
-
+@media (max-width: 1280px) {
+	.container img {
+		margin-left: 60rem;
+		width: 19%;
+		height: auto;
+	}
+}
+@media (max-width: 768px) {
+	.container img {
+		margin-left: 30rem;
+		width: 19%;
+	}
+}
