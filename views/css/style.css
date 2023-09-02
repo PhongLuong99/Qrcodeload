@@ -7,7 +7,7 @@
 
 
 .container{
-	background: url('https://www.joneslanglasalle.com.vn/images/apac/research/jll-singapore-property-market-watch-2023-teaser-800x600.jpg.rendition/desktop.jpg');
+	background: url("https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W.png?alt=media&token=e5e13bcf-cd93-4666-a474-d9318e3502a6");
 	width: 100%;
 	background-size: cover;
 	height: 100vh;
@@ -31,9 +31,8 @@ h1 {
 .container img {
 	display: block;
   	margin-left: auto;
-	padding-top: 7rem;
-  	margin-right: 5rem;
-	width: 30%;
+	padding-top: 550px;
+	width: 19%;
 }
 
 
