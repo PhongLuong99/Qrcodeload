@@ -55,24 +55,25 @@ async function dataQrloading() {
 			querySnapshot.forEach(doc =>{
 			const img_qrcode = doc.data().Qrcodeimage;
 			const name_qrcode = doc.data().name;
-			
+			const time = 90;
 			console.log(img_qrcode)
+		
 			QRCode.toDataURL(img_qrcode, function(err, codeimage){
-				io.emit('image', codeimage, name_qrcode);
+				io.sockets.emit('image', codeimage, time );
 				})
 			})
 		})
 		
-		collect_Image.onSnapshot(querySnapshot =>{
-			querySnapshot.forEach(doc =>{
-				const urlimg = doc.data().URLImage;
-				const name_urlimg = doc.data().name;
-				console.log(urlimg)
-				QRCode.toDataURL(urlimg, function(err, urlimage){
-					io.emit('image',urlimage, name_urlimg);
-				})
-			})
-		})
+		// collect_Image.onSnapshot(querySnapshot =>{
+		// 	querySnapshot.forEach(doc =>{
+		// 		const urlimg = doc.data().URLImage;
+		// 		const name_urlimg = doc.data().name;
+		// 		console.log(urlimg)
+		// 		QRCode.toDataURL(urlimg, function(err, urlimage){
+		// 			io.emit('image',urlimage, name_urlimg);
+		// 		})
+		// 	})
+		// })
 	
 }
 dataQrloading()

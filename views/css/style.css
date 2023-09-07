@@ -46,24 +46,66 @@
 	height: auto;
 	padding: 20px;
 	object-fit: cover;
+	-webkit-animation-name: zoom;
+  	-webkit-animation-duration: 0.6s;
+  	animation-name: zoom;
+ 	animation-duration: 0.6s;
 }
 
-/* Progress Bar*/
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+  	to {-webkit-transform:scale(1)}
+}
 
-#myProgress {
+@keyframes zoom {
+	from {transform:scale(0)} 
+  	to {transform:scale(1)}
+}
+
+/* Count Down*/
+
+p {
 	position: absolute;
-	width: 475px;
-	height: 20px;
-	top: 57px;
-	right: 96px;
-	border: 2px solid white;
-	display: none;
+	display: inline-flex;
+	width: 50px;
+	top: 33px;
+	font-size: 50px;
+	color: white;
+	right: 400px;
+	font-weight: bold;
   }
   
-  #myBar {
-	width: 100%;
-	height: 16px;
-	background-color: whitesmoke;
+  /* Dot Animation */
+.typing-animation{
+	display: inline-flex;
+	padding: 13px 10px;
+	border-radius: 50px;
+	position: absolute;
+	top: 450px;
+	right: 360px;
+}
+
+  .typing-animation .dot{
+	height: 25px;
+	width: 25px;
+	margin: 0 6px;
+	opacity: 0.7;
+	border-radius: 50%;
+	background: white;
+	animation: animateDots 1.8s var(--delay) ease-in-out infinite; 
   }
 
+@keyframes animateDots {
+	0%, 44% {
+		transform: translateY(0px);
+	}
 
+	28% {
+		opacity: 0.4;
+		transform: translateY(-9px);
+	}
+	44% {
+		opacity: 0.2;
+	}
+
+}

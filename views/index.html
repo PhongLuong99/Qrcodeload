@@ -22,13 +22,14 @@
 	-->
 	
 	<div class="Qrimg">
-		
-	</div>
-	<div id="myProgress">
-		<div id="myBar">
-
+		<div class="typing-animation">
+			<div class="dot" style="--delay: 200ms"></div>
+			<div class="dot" style="--delay: 300ms"></div>
+			<div class="dot" style="--delay: 400ms"></div>
 		</div>
+
 	</div>
+	
 	
 	
 </div>
@@ -36,41 +37,43 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  const socket = io();
+	const socket = io();
   		const img_qr = document.querySelector('.Qrimg');
-		const imgagecode = document.createElement('img')
-		const i = 0;
+		const imgagecode = document.createElement('img');
+		
+		const countdownEl = document.createElement('p'); 
 
-		function move() {
-  			if (i == 0) {
-    			i = 1;
-    			const elem = document.getElementById("myBar");
-    			const width = 100;
-    			const id = setInterval(frame, 90);
-    		function frame() {
-      			if (width == 1) {
-        			clearInterval(id);
-        			i = 0;
-      			} else {
-        			width--;
-        			elem.style.width = width + "%";
-      			}
-    		}
-  			}
-	}	
+	socket.on('image', (image_qr, loading) => {
+		
+		imgagecode.setAttribute('src', image_qr);
+		img_qr.appendChild(imgagecode)
+		img_qr.appendChild(countdownEl)
+		countdownEl.textContent = `${loading}`
 
 		
-	socket.on('image', (image_qr, title_qr) => {
-
-		imgagecode.setAttribute('src', image_qr);
-
-		img_qr.appendChild(imgagecode)
 		//name_qr.textContent = `${title_qr}`;
-	
+		
+		// loading bar
+		
+		let time = loading;
+		let countdown = setInterval(update, 1000)
+		function update() {
+			time--;
+			countdownEl.textContent = `${time}`
+			console.log(time)
+			if(time == 0 ){
+				clearInterval(countdown)
+			 	countdownEl.remove();
+			 	imgagecode.remove()
+			}
+			 
+		}
+
+		// time Out
+
+
 	});
   
-	
-
 </script>
 
 </html>
