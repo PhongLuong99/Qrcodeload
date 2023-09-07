@@ -7,7 +7,7 @@
 /* Background */
 
 .container{
-	background-image: url('https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W-11.png?alt=media&token=3990410b-46bf-4ce0-bd4a-0aa62a5e0191');
+	background-image: url('https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W-12.png?alt=media&token=7f8037c4-3c29-4d90-842b-569baf560fa5');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
@@ -40,9 +40,9 @@
 
 .Qrimg img {
 	position: absolute;
-  	top: 78px;
-	right: 79px;
-	width: 512px;
+  	top: 124px;
+	right: 121px;
+	width: 653px;
 	height: auto;
 	padding: 20px;
 	object-fit: cover;
