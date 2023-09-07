@@ -22,7 +22,7 @@
 	-->
 	
 	<div class="Qrimg">
-		<img  >
+		
 	</div>
 	<div id="myProgress">
 		<div id="myBar">
@@ -38,6 +38,7 @@
 <script>
   const socket = io();
   		const img_qr = document.querySelector('.Qrimg');
+		const imgagecode = document.createElement('img')
 		const i = 0;
 
 		function move() {
@@ -61,7 +62,9 @@
 		
 	socket.on('image', (image_qr, title_qr) => {
 
-		img_qr.setAttribute('src', image_qr);
+		imgagecode.setAttribute('src', image_qr);
+
+		img_qr.appendChild(imgagecode)
 		//name_qr.textContent = `${title_qr}`;
 	
 	});
