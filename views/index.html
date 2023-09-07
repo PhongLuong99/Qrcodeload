@@ -9,10 +9,27 @@
 </head>
 <body>
 <div class="container">
-	<h1 id="title_QR"></h1>
-	<div>
+	<!--   
+
+`	<div class="logo">
+		<img src="https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W-06.png?alt=media&token=37bcb6ba-31e4-4909-81d7-867a1dc6fb58" alt="nowisnotthetime">
+	</div>
+	<div class="scanhere"> 
+		<img src="https://firebasestorage.googleapis.com/v0/b/vinhbidien-a7303.appspot.com/o/ScanQR-W-07.png?alt=media&token=43cecd97-5a8c-4675-849e-c6cd1a695015" alt="">
+	</div>
+
+
+	-->
+	
+	<div class="Qrimg">
 		<img  >
 	</div>
+	<div id="myProgress">
+		<div id="myBar">
+
+		</div>
+	</div>
+	
 	
 </div>
 </body>
@@ -20,9 +37,26 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   const socket = io();
-  		const img_qr = document.querySelector('img');
-		const name_qr = document.querySelector('#title_QR');
-		
+  		const img_qr = document.querySelector('.Qrimg');
+		const i = 0;
+
+		function move() {
+  			if (i == 0) {
+    			i = 1;
+    			const elem = document.getElementById("myBar");
+    			const width = 100;
+    			const id = setInterval(frame, 90);
+    		function frame() {
+      			if (width == 1) {
+        			clearInterval(id);
+        			i = 0;
+      			} else {
+        			width--;
+        			elem.style.width = width + "%";
+      			}
+    		}
+  			}
+	}	
 
 		
 	socket.on('image', (image_qr, title_qr) => {
@@ -32,6 +66,8 @@
 	
 	});
   
+	
+
 </script>
 
 </html>
