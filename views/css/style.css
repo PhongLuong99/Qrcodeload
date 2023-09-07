@@ -57,6 +57,7 @@
 	top: 57px;
 	right: 96px;
 	border: 2px solid white;
+	display: none;
   }
   
   #myBar {
